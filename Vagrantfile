@@ -27,7 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
     DEBIAN_FRONTEND=noninteractive sudo apt-get install -y postfix
 
-    if [ ! -e /vagrant/ubuntu-bionic-gitlab-ce_12.9.3-ce.0_amd64.deb ]; then
+    if [ ! -e /vagrant/ubuntu-bionic-gitlab-ce_16.2.4-ce.0_amd64.deb ]; then
         wget --content-disposition -O /vagrant/ubuntu-bionic-gitlab-ce_16.2.4-ce.0_amd64.deb https://packages.gitlab.com/gitlab/gitlab-ce/packages/ubuntu/bionic/gitlab-ce_16.2.4-ce.0_amd64.deb/download.deb
     fi
     sudo dpkg -i /vagrant/ubuntu-bionic-gitlab-ce_16.2.4-ce.0_amd64.deb
